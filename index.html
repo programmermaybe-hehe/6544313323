@@ -3,61 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Chiku</title>
-<link rel="stylesheet" href="style.css">
+<title>Happy Birthday Chikuu</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-<audio id="bgMusic" src="music/blue.mp3" loop></audio>
-
-<div class="bg"></div>
-<div class="overlay"></div>
-
-<!-- SCENE 1 : CAKE VIDEO -->
+<!-- SCENE 1 : CAKE -->
 <div id="scene1" class="scene">
-  <video id="cakeVideo" src="videos/cakee.mp4" autoplay muted loop playsinline onclick="goToGift()"></video>
-  <div class="text">
-    <h1>HAPPY BIRTHDAYY CHIKUUUU ❤️</h1>
-    <p class="name">Make a wish 🤗</p>
-    <p>Tap the cake 🎂</p>
-  </div>
+  <video id="cakeVideo" src="videos/cake.mp4" muted autoplay loop></video>
+  <p>Tap the cake 🎂</p>
 </div>
 
-<!-- SCENE 2 : GIFT DRAMA -->
+<!-- SCENE 2 : GIFT -->
 <div id="scene2" class="scene hidden">
-  <h1>Gift chahiye?? 🤭</h1>
-
-  <div class="choice">
-    <button onclick="showGift()">Yes</button>
-    <button id="noBtn">No</button>
+  <div id="giftTextBox">
+    <h1>Gift chahiye?? 🤭</h1>
+    <div class="choice">
+      <button onclick="showGift()">Yes</button>
+      <button id="noBtn">No</button>
+    </div>
+    <p id="forceText" class="hidden">Gift toh lena hi padega hehehe </p>
   </div>
 
-  <p id="forceText" class="hidden">Gift toh lena hi padega hehehe 😝😝</p>
-
-  <div class="gift hidden" onclick="openGift()"></div>
+  <img src="images/gift.png" class="gift hidden" onclick="openGift()">
   <img src="images/runner.png" id="runner">
-
   <img src="images/letter1.png" class="letter" id="letterMain" onclick="openLetter()">
-  <img src="images/letter2.png" class="letter" id="letterSecond" onclick="openBouquet()">
 </div>
 
-<!-- SCENE 3 : MEMORY LETTER -->
+<!-- SCENE 3 : LETTER + MEMORIES -->
 <div id="scene3" class="scene hidden letterScene">
   <div class="borderImgs top">
     <img src="images/memory1.jpg">
-    <img src="images/memory2.png">
+    <img src="images/memory2.jpg">
     <img src="images/memory3.jpg">
   </div>
 
   <div class="centerLetter">
-    <h1 id="letterWish"></h1>
-    <button onclick="showSecondLetter()">Next</button>
+    <p id="letterWish"></p>
+    <button onclick="showBouquet()">Next</button>
   </div>
 
   <div class="borderImgs bottom">
     <img src="images/memory4.jpg">
-    <img src="images/memory5.png">
+    <img src="images/memory5.jpg">
     <img src="images/memory6.jpg">
   </div>
 </div>
@@ -70,14 +59,18 @@
 
 <!-- SCENE 5 : FINAL -->
 <div id="scene5" class="scene hidden">
-  <h1 id="finalText"></h1>
-  <div id="hugBox" class="hidden">
-    <img src="images/hug.mp4">
-    <img src="images/hug 2.mp4">
-    <p>Thank you for everything 🤍</p>
+  <div id="sae-video-box">
+    <video id="saeVideo" src="videos/sae.mp4" muted loop playsinline></video>
   </div>
+
+  <h1 id="finalText"></h1>
+
+  <video id="hugVideo" src="videos/hug.mp4" muted loop playsinline></video>
+
+  <div id="subtitle"></div>
+  <p class="thankText">Thank you for everything 🤍</p>
 </div>
 
-<script src="script.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
