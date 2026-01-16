@@ -1,7 +1,10 @@
-const music=document.getElementById("bgMusic");
-document.body.addEventListener("click",()=>music.play(),{once:true});
+const music = document.getElementById("bgMusic");
 
-function showScene(hide,show){
+document.body.addEventListener("click",()=>{
+  music.play();
+},{once:true});
+
+function showScene(hide, show){
   hide.classList.add("hidden");
   setTimeout(()=>{
     hide.style.display="none";
@@ -10,11 +13,13 @@ function showScene(hide,show){
   },800);
 }
 
-function blowCake(){
-  showScene(scene1,scene2);
+/* Scene 1 */
+function goToGift(){
+  showScene(scene1, scene2);
 }
 
-noBtn.onclick=()=>{
+/* Scene 2 */
+noBtn.onclick = ()=>{
   runner.classList.add("run");
   noBtn.style.display="none";
   forceText.classList.remove("hidden");
@@ -31,38 +36,43 @@ function openGift(){
   letterMain.style.transform="translate(0,-150px)";
 }
 
+/* Letter 1 */
 function openLetter(){
-  showScene(scene2,scene3);
+  showScene(scene2, scene3);
   typeWish();
 }
 
 function typeWish(){
-  let txt="HAPPY BIRTHDAYY CHIKUUUU ❤️\nMake a wish 🤗\nBest memories.";
+  const text = "HAPPY BIRTHDAYY CHIKUUUU ❤️\nMake a wish 🤗\nBest memories.";
   let i=0;
   letterWish.innerHTML="";
-  let t=setInterval(()=>{
-    letterWish.innerHTML+=txt.charAt(i++);
-    if(i>=txt.length) clearInterval(t);
+  const t = setInterval(()=>{
+    letterWish.innerHTML += text.charAt(i++);
+    if(i>=text.length) clearInterval(t);
   },50);
 }
 
+/* Letter 2 */
 function showSecondLetter(){
-  showScene(scene3,scene2);
+  showScene(scene3, scene2);
   letterMain.style.display="none";
   letterSecond.style.opacity=1;
   letterSecond.style.transform="translate(0,-150px)";
 }
 
+/* Bouquet */
 function openBouquet(){
-  showScene(scene2,scene4);
+  showScene(scene2, scene4);
 }
 
+/* Final */
 function finalScene(){
-  showScene(scene4,scene5);
-  let msg="Asli gift mil jaayega jald hi 😭🤭";
+  showScene(scene4, scene5);
+  const msg = "Asli gift mil jaayega jald hi 😭🤭";
   let i=0;
-  let t=setInterval(()=>{
-    finalText.innerHTML+=msg.charAt(i++);
+  finalText.innerHTML="";
+  const t = setInterval(()=>{
+    finalText.innerHTML += msg.charAt(i++);
     if(i>=msg.length){
       clearInterval(t);
       setTimeout(()=>hugBox.classList.remove("hidden"),1200);
