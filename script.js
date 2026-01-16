@@ -13,37 +13,48 @@ function showScene(hide, show){
   },800);
 }
 
-/* Scene 1 */
-function goToGift(){
-  showScene(scene1, scene2);
+const scene1 = scene1=document.getElementById("scene1");
+const scene2 = document.getElementById("scene2");
+const scene3 = document.getElementById("scene3");
+const scene4 = document.getElementById("scene4");
+const scene5 = document.getElementById("scene5");
+
+function showScene(a,b){
+  a.classList.add("hidden");
+  b.classList.remove("hidden");
 }
 
-/* Scene 2 */
-noBtn.onclick = ()=>{
-  runner.classList.add("run");
-  noBtn.style.display="none";
-  forceText.classList.remove("hidden");
-  showGift();
-};
+/* CAKE */
+cakeVideo.onclick = ()=>showScene(scene1,scene2);
 
+/* GIFT */
 function showGift(){
   document.querySelector(".gift").classList.remove("hidden");
+  document.getElementById("forceText").classList.remove("hidden");
 }
+
+noBtn.onclick = ()=>{
+  runner.style.left = Math.random()*70 + "%";
+};
 
 function openGift(){
-  document.querySelector(".gift").classList.add("open");
-  letterMain.style.opacity=1;
-  letterMain.style.transform="translate(0,-150px)";
+  giftTextBox.style.display="none";
+  runner.style.display="none";
+  setTimeout(()=>{
+    letterMain.style.opacity=1;
+    letterMain.style.transform="translateY(-150px)";
+  },400);
 }
 
-/* Letter 1 */
+/* LETTER */
 function openLetter(){
-  showScene(scene2, scene3);
+  showScene(scene2,scene3);
   typeWish();
 }
 
+
 function typeWish(){
-  const text = "HAPPY BIRTHDAYY CHIKUUUU ❤️\nMake a wish 🤗\nBest memories.";
+  const text = "HAPPY BIRTHDAYY CHIKUUUU ❤️\n Hope you have the best day today and a great year as well cutiee!!";
   let i=0;
   letterWish.innerHTML="";
   const t = setInterval(()=>{
@@ -64,6 +75,19 @@ function showSecondLetter(){
 function openBouquet(){
   showScene(scene2, scene4);
 }
+  let i=0;
+  subtitle.style.opacity=1;
+  const s=setInterval(()=>{
+    subtitle.innerText=subs[i++];
+    if(i>=subs.length)clearInterval(s);
+  },2000);
+
+  document.getElementById("sae-video-box").classList.add("speaking");
+  voice.onended=()=>{
+    document.getElementById("sae-video-box").classList.remove("speaking");
+  };
+
+}
 
 /* Final */
 function finalScene(){
@@ -79,3 +103,14 @@ function finalScene(){
     }
   },60);
 }
+
+
+
+
+
+
+
+
+
+
+
