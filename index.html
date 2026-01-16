@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Chiku</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<audio id="bgMusic" src="music/blue.mp3" loop></audio>
+
+<div class="bg"></div>
+<div class="overlay"></div>
+
+<!-- SCENE 1 : CAKE -->
+<div id="scene1" class="scene">
+  <div class="cake" onclick="blowCake()">
+    <div class="fuego"></div><div class="fuego"></div><div class="fuego"></div>
+    <div class="fuego"></div><div class="fuego"></div>
+  </div>
+
+  <!-- PASTE YOUR FULL SVG CAKE HERE EXACTLY -->
+  <!-- (Your SVG code goes here unchanged) -->
+
+  <div class="text">
+    <h1>HAPPY BIRTHDAYY CHIKUUUU ❤️</h1>
+    <p class="name">Make a wish 🤗</p>
+    <p>Tap the candle 🎂</p>
+  </div>
+</div>
+
+<!-- SCENE 2 : GIFT DRAMA -->
+<div id="scene2" class="scene hidden">
+  <h1>Gift chahiye?? 🤭</h1>
+
+  <div class="choice">
+    <button onclick="showGift()">Yes</button>
+    <button id="noBtn">No</button>
+  </div>
+
+  <p id="forceText" class="hidden">Gift toh lena hi padega hehehe 😝😝</p>
+
+  <div class="gift hidden" onclick="openGift()"></div>
+  <img src="images/runner.png" id="runner">
+
+  <img src="images/letter1.png" class="letter" id="letterMain" onclick="openLetter()">
+  <img src="images/letter2.png" class="letter" id="letterSecond" onclick="openBouquet()">
+</div>
+
+<!-- SCENE 3 : MEMORY LETTER -->
+<div id="scene3" class="scene hidden letterScene">
+  <div class="borderImgs top">
+    <img src="images/memory1.jpg">
+    <img src="images/memory2.jpg">
+    <img src="images/memory3.jpg">
+  </div>
+
+  <div class="centerLetter">
+    <h1 id="letterWish"></h1>
+    <button onclick="showSecondLetter()">Next</button>
+  </div>
+
+  <div class="borderImgs bottom">
+    <img src="images/memory4.jpg">
+    <img src="images/memory5.jpg">
+    <img src="images/memory6.jpg">
+  </div>
+</div>
+
+<!-- SCENE 4 : BOUQUET -->
+<div id="scene4" class="scene hidden">
+  <img src="images/bouquet.png" class="bouquet" onclick="finalScene()">
+  <p>For you 🌸</p>
+</div>
+
+<!-- SCENE 5 : FINAL -->
+<div id="scene5" class="scene hidden">
+  <h1 id="finalText"></h1>
+
+  <div id="hugBox" class="hidden">
+    <img src="images/hug1.gif">
+    <img src="images/hug2.gif">
+    <p>Thank you for everything 🤍</p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
