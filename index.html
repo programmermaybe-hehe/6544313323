@@ -14,20 +14,13 @@
 <div class="bg"></div>
 <div class="overlay"></div>
 
-<!-- SCENE 1 : CAKE -->
+<!-- SCENE 1 : CAKE VIDEO -->
 <div id="scene1" class="scene">
-  <div class="cake" onclick="blowCake()">
-    <div class="fuego"></div><div class="fuego"></div><div class="fuego"></div>
-    <div class="fuego"></div><div class="fuego"></div>
-  </div>
-
-  <!-- PASTE YOUR FULL SVG CAKE HERE EXACTLY -->
-  <!-- (Your SVG code goes here unchanged) -->
-
+  <video id="cakeVideo" src="videos/cake.mp4" autoplay muted loop playsinline onclick="goToGift()"></video>
   <div class="text">
     <h1>HAPPY BIRTHDAYY CHIKUUUU ❤️</h1>
     <p class="name">Make a wish 🤗</p>
-    <p>Tap the candle 🎂</p>
+    <p>Tap the cake 🎂</p>
   </div>
 </div>
 
@@ -78,7 +71,6 @@
 <!-- SCENE 5 : FINAL -->
 <div id="scene5" class="scene hidden">
   <h1 id="finalText"></h1>
-
   <div id="hugBox" class="hidden">
     <img src="images/hug1.gif">
     <img src="images/hug2.gif">
